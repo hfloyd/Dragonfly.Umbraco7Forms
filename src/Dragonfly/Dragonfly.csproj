@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net45</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Copyright>Heather Floyd [www.HeatherFloyd.com]</Copyright>
+    <RepositoryType>GIT</RepositoryType>
+    <Authors>Heather Floyd</Authors>
+    <Company></Company>
+    <Product>Dragonfly</Product>
+    <Description>A collection of Umbraco Forms FieldTypes.</Description>
+    <PackageLicenseUrl>https://github.com/hfloyd/Dragonfly.UmbracoFormsFields/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/hfloyd/Dragonfly.UmbracoFormsFields</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/hfloyd/Dragonfly.UmbracoFormsFields</RepositoryUrl>
+    <PackageId>Dragonfly.UmbracoFormsFields</PackageId>
+    <AssemblyName>Dragonfly.UmbracoForms</AssemblyName>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Forms.FieldTypes\LikertGrid.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Dragonfly.Net" Version="1.6.0" />
+    <PackageReference Include="UmbracoForms.Core" Version="6.0.6" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+  </ItemGroup>
+
+  <Import Project="..\Custom.targets" />
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="XCOPY /y &quot;$(TargetDir)$(TargetName)*.*&quot; &quot;C:\Users\Heather\NAS Folders\Active Projects\Webs\HeatherFloyd.com\sourcecode\HeatherFloyd.Web\bin&quot;&#xD;&#xA;XCOPY /Y/D/E &quot;$(ProjectDir)UX\*.*&quot; &quot;C:\Users\Heather\NAS Folders\Active Projects\Webs\HeatherFloyd.com\sourcecode\HeatherFloyd.Web\&quot;" />
+  </Target>
+</Project>

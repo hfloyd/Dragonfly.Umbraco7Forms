@@ -1,0 +1,18 @@
+
+<strong>Likert Rating Item</strong>
+
+<div ng-if="field.settings.MaxScaleNumString != null">
+    <span>Scale: 1 - {{field.settings.MaxScaleNumString}}</span>
+</div>
+<div ng-if="field.settings.MaxScaleNumString == null">
+    <span>Scale: 1 - 5</span>
+</div>
+
+<div ng-if="field.settings.IncludeNaOptionString == 'True'">
+    <div ng-if="field.settings.NaOptionText != null">
+        <span>{{field.settings.NaOptionText}}</span>
+    </div>
+    <div ng-if="field.settings.NaOptionText == null">
+        <span>N/A</span>
+    </div>
+</div>

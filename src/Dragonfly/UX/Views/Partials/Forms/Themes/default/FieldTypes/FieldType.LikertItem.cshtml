@@ -1,0 +1,35 @@
+@using System.Collections.Generic
+@using Umbraco.Core
+@using Umbraco.Web
+@using System
+@using System.Linq
+@using Dragonfly.Forms.FieldTypes
+@using Umbraco.Forms.Mvc
+@model Umbraco.Forms.Mvc.Models.FieldViewModel
+@{
+    //var umbracoHelper = new UmbracoHelper(UmbracoContext.Current);
+
+    // var settings = Model.AdditionalSettings;
+
+    var likertItemModel = Model.FieldType as LikertItem;
+
+}
+<div class="btn-group radiobuttonlist likertitem" data-toggle="buttons" id="@Model.Id">
+    @foreach (var option in likertItemModel.RatingOptions())
+    {
+        var optionValue = option.Key;
+        var optionLabel = option.Value;
+        var i = optionValue;
+
+        //var btnClass = optionValue == 0 ? "btn-secondary" : "btn-primary";
+        var btnClass = "btn-primary";
+        var activeClass = Model.ContainsValue(optionValue) ? "active" : "";
+        var optionClass = string.Format("btn {0} {1}", btnClass, activeClass);
+
+        <label for="@string.Concat(Model.Id, "_", i)" class="@optionClass">
+            <input type="radio" name="@Model.Id" id="@string.Concat(Model.Id, "_", i)" value="@optionValue"
+                   @if (Model.Mandatory) { <text> data-val="true" data-val-requiredlist="@Model.RequiredErrorMessage" </text> }
+                   @if (Model.ContainsValue(optionValue)) { <text> checked="checked" </text> } /> @optionLabel
+        </label>
+    }
+</div>
