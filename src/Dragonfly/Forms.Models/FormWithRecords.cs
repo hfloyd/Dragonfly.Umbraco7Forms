@@ -18,34 +18,31 @@ namespace Dragonfly.Forms.Models
         public IEnumerable<string> FormInfo { get; }
         //public string FormName { get;  }
         public IEnumerable<Umbraco.Forms.Core.Field> Fields { get;  }
-        public IEnumerable<DynamicRecord> RecordsAll { get; }
-        public IEnumerable<DynamicRecord> RecordsApproved { get;}
+        public List<Record> RecordsAll { get; }
+        public List<Record> RecordsApproved { get;}
 
         public FormWithRecords(string FormGuidString)
         {
             //Set basic properties
             this.FormGuid = new Guid(FormGuidString);
 
-
+            Record temp; 
             //These versions cause "There is already an open DataReader associated with this Command which must be closed first." errors
             //see: https://our.umbraco.org/forum/umbraco-forms/78207-working-with-record-data-there-is-already-an-open-datareader-associated
             //this.RecordsApproved = Library.GetApprovedRecordsFromForm(FormGuidString).Items;
             //this.RecordsAll = Library.GetRecordsFromForm(FormGuidString).Items;
-
-            //Alternative
+            //Alternative:
             using (var formStorage = new FormStorage())
             {
                 using (var recordStorage = new RecordStorage())
                 {
-                    var form = formStorage.GetForm(Guid.Parse("ede58fd2-9eff-4f88-a5d6-053042983681"));
+                    var form = formStorage.GetForm(this.FormGuid);
                     var allRecords = recordStorage.GetAllRecords(form).ToList();
 
                     this.RecordsAll = allRecords;
                     this.RecordsApproved = allRecords.Where(x => x.State == FormState.Approved).ToList();
-
                 }
             }
-
 
             // Get form info
             using (FormStorage formStorage = new FormStorage())

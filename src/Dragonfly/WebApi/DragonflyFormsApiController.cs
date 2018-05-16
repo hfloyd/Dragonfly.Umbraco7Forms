@@ -40,6 +40,8 @@ namespace Dragonfly.WebApi
 
             var formClassName = formData.Form.Name.MakeCodeSafe("",true);
 
+            //TODO: HLF - Update with new Record and FormsHelper syntax
+
             formClass.AppendLine($@"
 public partial class Form{formClassName}
     {{
