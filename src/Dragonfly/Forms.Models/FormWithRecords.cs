@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Dragonfly.Forms.Models
+﻿namespace Dragonfly.Forms.Models
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
     using Umbraco.Forms.Core;
     using Umbraco.Forms.Core.Enums;
     using Umbraco.Forms.Data.Storage;
-    using Umbraco.Forms.Mvc.DynamicObjects;
 
     public class FormWithRecords
     {
@@ -26,8 +22,7 @@ namespace Dragonfly.Forms.Models
             //Set basic properties
             this.FormGuid = new Guid(FormGuidString);
 
-            Record temp; 
-            //These versions cause "There is already an open DataReader associated with this Command which must be closed first." errors
+            //The "Library" functions cause "There is already an open DataReader associated with this Command which must be closed first." errors
             //see: https://our.umbraco.org/forum/umbraco-forms/78207-working-with-record-data-there-is-already-an-open-datareader-associated
             //this.RecordsApproved = Library.GetApprovedRecordsFromForm(FormGuidString).Items;
             //this.RecordsAll = Library.GetRecordsFromForm(FormGuidString).Items;

@@ -5,7 +5,6 @@
     using System.Linq;
     using System.Text.RegularExpressions;
     using Dragonfly.Forms.Models;
-    using umbraco.presentation.umbraco.create;
     using Umbraco.Core.Logging;
     using Umbraco.Forms.Core;
     using Umbraco.Forms.Core.Enums;

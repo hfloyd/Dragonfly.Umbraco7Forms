@@ -33,6 +33,6 @@
   <Import Project="..\Custom.targets" />
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="XCOPY /y &quot;$(TargetDir)$(TargetName)*.*&quot; &quot;C:\Users\Heather\NAS Folders\Active Projects\Webs\HeatherFloyd.com\sourcecode\HeatherFloyd.Web\bin&quot;&#xD;&#xA;XCOPY /Y/D/E &quot;$(ProjectDir)UX\*.*&quot; &quot;C:\Users\Heather\NAS Folders\Active Projects\Webs\HeatherFloyd.com\sourcecode\HeatherFloyd.Web\&quot;" />
+    <Exec Command="XCOPY /y &quot;$(TargetDir)$(TargetName)*.*&quot; &quot;C:\XX.Web\bin&quot;&#xD;&#xA;XCOPY /Y/D/E &quot;$(ProjectDir)UX\*.*&quot; &quot;C:\XX.Web\&quot;" />
   </Target>
 </Project>

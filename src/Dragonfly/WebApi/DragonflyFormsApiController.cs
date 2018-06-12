@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Dragonfly.WebApi
+﻿namespace Dragonfly.WebApi
 {
-    using System.CodeDom;
+    using System.Text;
     using System.Net.Http;
     using Dragonfly.Forms.Models;
     using Dragonfly.NetHelpers;
-    using Umbraco.Core.Logging;
     using Umbraco.Forms.Core;
     using Umbraco.Web.WebApi;
 
