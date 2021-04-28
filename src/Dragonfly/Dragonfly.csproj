@@ -8,11 +8,11 @@
     <Authors>Heather Floyd</Authors>
     <Company></Company>
     <Product>Dragonfly</Product>
-    <Description>A collection of Umbraco Forms FieldTypes.</Description>
+    <Description>A collection of Umbraco 7 Forms FieldTypes and Helpers.</Description>
     <PackageLicenseUrl>https://github.com/hfloyd/Dragonfly.UmbracoFormsFields/blob/master/LICENSE.md</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/hfloyd/Dragonfly.UmbracoFormsFields</PackageProjectUrl>
     <RepositoryUrl>https://github.com/hfloyd/Dragonfly.UmbracoFormsFields</RepositoryUrl>
-    <PackageId>Dragonfly.UmbracoFormsFields</PackageId>
+    <PackageId>Dragonfly.Umbraco7Forms</PackageId>
     <AssemblyName>Dragonfly.UmbracoForms</AssemblyName>
     <Version>1.0.0</Version>
   </PropertyGroup>
